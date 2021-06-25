@@ -19,7 +19,7 @@ class UpdateBookInfo extends Component {
   componentDidMount() {
     // console.log("Print id: " + this.props.match.params.id);
     axios
-      .get("http://localhost:8082/api/books/" + this.props.match.params.id)
+      .get(`${process.env.REACT_APP_API_URL}api/books/` + this.props.match.params.id)
       .then((res) => {
         // this.setState({...this.state, book: res.data})
         this.setState({
