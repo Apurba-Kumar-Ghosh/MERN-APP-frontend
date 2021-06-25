@@ -24,13 +24,13 @@ class showBookDetails extends Component {
         });
       })
       .catch((err) => {
-        console.log("Error from ShowBookDetails");
+        console.log(err);
       });
   }
 
   onDeleteClick(id) {
     axios
-      .delete("http://localhost:8082/api/books/" + id)
+      .delete(`${APIROOT}/api/books/` + id)
       .then((res) => {
         this.props.history.push("/");
       })

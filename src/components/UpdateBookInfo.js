@@ -24,6 +24,7 @@ class UpdateBookInfo extends Component {
       .get(`${APIROOT}api/books/` + this.props.match.params.id)
       .then((res) => {
         // this.setState({...this.state, book: res.data})
+        console.log(res.data);
         this.setState({
           title: res.data.title,
           isbn: res.data.isbn,
