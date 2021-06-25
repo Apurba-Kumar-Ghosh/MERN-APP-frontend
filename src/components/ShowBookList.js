@@ -4,6 +4,8 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import BookCard from "./BookCard";
 
+const APIROOT = "https://mern-stack-backend-appu.herokuapp.com";
+
 class ShowBookList extends Component {
   constructor(props) {
     super(props);
@@ -14,7 +16,7 @@ class ShowBookList extends Component {
 
   componentDidMount() {
     axios
-      .get(`${process.env.REACT_APP_API_URL}/api/books`)
+      .get(`${APIROOT}/api/books`)
       .then((res) => {
         this.setState({
           books: res.data,

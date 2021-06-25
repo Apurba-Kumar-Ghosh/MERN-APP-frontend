@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import "../App.css";
 import axios from "axios";
 
+const APIROOT = "https://mern-stack-backend-appu.herokuapp.com";
+
 class showBookDetails extends Component {
   constructor(props) {
     super(props);
@@ -14,7 +16,7 @@ class showBookDetails extends Component {
   componentDidMount() {
     // console.log("Print id: " + this.props.match.params.id);
     axios
-      .get(`${process.env.REACT_APP_API_URL}api/books/` + this.props.match.params.id)
+      .get(`${APIROOT}api/books/` + this.props.match.params.id)
       .then((res) => {
         // console.log("Print-showBookDetails-API-response: " + res.data);
         this.setState({
